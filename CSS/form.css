@@ -1,0 +1,113 @@
+* {
+  font-family: Outfit;
+  text-decoration: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: url(../asset/601862.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 0 400px;
+}
+
+.form-container {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  opacity: .8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-container form {
+  padding: 20px;
+  border-radius: 5px;
+  background: white;
+}
+.form-container form h3 {
+  text-align: center;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  color: black;
+}
+.form-container input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 15px;
+  margin: 8px 0;
+  background: #eee;
+  padding: 5px;
+  border-bottom: #870000 solid;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+}
+
+.form-container input,
+.form-container select {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 15px;
+  margin: 8px 0;
+  background: #eee;
+}
+
+.form-container select option {
+  background: white;
+  border-radius: 10px;
+}
+.form-container form p {
+  text-align: center;
+  text-transform: capitalize;
+  margin-top: 10px;
+}
+.form-container label {
+  color: #000000;
+}
+.form-container #submit {
+  background-color: #670000;
+  border-radius: 50rem;
+  border: 0;
+  margin-top: 5px;
+  padding: 0.5rem 1.5rem;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/*error style*/
+.form-container form .error-msg {
+  margin: 10px 0;
+  display: block;
+  background: red;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.home-btn {
+  background-color: #870000;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+i {
+  color: white;
+}
