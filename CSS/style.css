@@ -5,9 +5,12 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    color: aliceblue;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
 }
+
+/* Login Page Style */
