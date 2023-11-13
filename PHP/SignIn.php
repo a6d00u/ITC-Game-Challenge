@@ -12,14 +12,15 @@ if (isset($_POST['submit'])) {
   $result = mysqli_query($conn, $select);
 
   if (mysqli_num_rows($result) > 0) {
-    $row = mysqli_fetch_array($result);
-    header('../index.html');
-
+    $error[] = 'Account already existe !';
   } else {
-    $error[] = 'incorrect email or password';
+    $insert = " INSERT INTO users(Username,e-mail,password) VALUES('$name','$email','$password')";
+    mysqli_query($conn, $insert);
+    header('location:login.php');
   }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +29,7 @@ if (isset($_POST['submit'])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../CSS/form.css?v=<?php echo time(); ?>">
-  <title>AC-Login</title>
+  <title>AC-Registre</title>
 </head>
 
 <body>
@@ -37,8 +38,8 @@ if (isset($_POST['submit'])) {
   </div>
   <div class="container">
     <div class="form-container">
-      <form action="login.php" method="post">
-        <h3>Login to your Account</h3>
+      <form action="SignIn.php" method="post">
+        <h3>Create your Account</h3>
         <!--error mesg-->
         <?php
         if (isset($error)) {
@@ -48,13 +49,14 @@ if (isset($_POST['submit'])) {
         }
         ?>
         <!--error mesg-->
-
-        <label for="E-mail">E-mail</label>
-        <input type="email" name="E-mail" required />
+        <label for="name">Username</label>
+        <input type="text" name="Username" required minlength="5" maxlength="100" />
+        <label for="e-mail">E-mail</label>
+        <input type="e-mail" name="e-mail" required />
         <label for="password">Password</label>
         <input type="password" name="password" required />
-        <input type="submit" value="Login" id="submit" />
-        <p>Don't Have an account? <a href="SignIn.php">Registre now</a></p>
+        <input type="submit" value="Registre" id="submit" />
+        <p>Already Have an account? <a href="login.php">Login now</a></p>
       </form>
     </div>
   </div>

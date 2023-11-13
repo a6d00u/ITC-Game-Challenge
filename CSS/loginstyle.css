@@ -1,17 +1,24 @@
 * {
-    background-image: url(/asset/601862.jpg);
     padding: 0;
     margin: 0;
     font-family: moon;
     text-decoration: none;
 }
+
+body {
+    background-image: url(../asset/601862.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .container-login {
     width: 35%;
     height: auto;
     min-width: 100vh;
-    position: relative;
     top: -2rem;
-    background-color: rgb(0, 0, 71) ;
+    background-color: rgb(255, 255, 255) ;
 }
 h2 {
     color: white;
@@ -32,5 +39,21 @@ form {
     transform: scale(.9);
     opacity: .8;
     z-index: 1;
-    
+}
+form label {
+    color: white;
+    font-weight: 300;
+    gap: 10px;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    margin: 1em 0;
+    text-align: left;
+    text-transform: uppercase;
+}
+form input {
+    background-color: white;
+    border-radius: 5px;
+    outline: none;
+    padding: 7px 0;
+    width: 90%;
 }
