@@ -107,7 +107,10 @@ body {
   top: 5px;
   right: 10px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-i {
+.btn-outline-light {
   color: white;
 }

@@ -2,13 +2,15 @@
 
 @include 'configuration.php';
 
+session_start();
+
 if (isset($_POST['submit'])) {
 
   $name = mysqli_real_escape_string($conn, $_POST['Username']);
   $email = mysqli_real_escape_string($conn, $_POST['e-mail']);
   $password = md5($_POST['password']);
 
-  $select = " SELECT * FROM users WHERE e-mail = '$email' && password = '$password' ";
+  $select = " SELECT * FROM 'users' WHERE e-mail = '$email' && password = '$password' ";
   $result = mysqli_query($conn, $select);
 
   if (mysqli_num_rows($result) > 0) {
@@ -16,7 +18,7 @@ if (isset($_POST['submit'])) {
   } else {
     $insert = " INSERT INTO users(Username,e-mail,password) VALUES('$name','$email','$password')";
     mysqli_query($conn, $insert);
-    header('location:login.php');
+    header('location:PHP/login.php');
   }
 }
 ?>
@@ -34,11 +36,11 @@ if (isset($_POST['submit'])) {
 
 <body>
   <div class="home-btn">
-  <a class="btn-outline-light" href="index.html"><i class="fa fa-home"></i></a>
+  <a class="btn-outline-light" href="../index.html">Home</a>
   </div>
   <div class="container">
     <div class="form-container">
-      <form action="SignIn.php" method="post">
+      <form action="Signin.php" method="post">
         <h3>Create your Account</h3>
         <!--error mesg-->
         <?php
