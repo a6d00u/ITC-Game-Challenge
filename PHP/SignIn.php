@@ -40,9 +40,10 @@ if (isset($_POST['submit'])) {
   </div>
   <div class="container">
     <div class="form-container">
-      <form action="Signin.php" method="post">
-        <h3>Create your Account</h3>
-        <!--error mesg-->
+      <form action="SignIn.php" method="post" >
+        <h3> Create your Account </h3>
+
+        <!--error msg-->
         <?php
         if (isset($error)) {
           foreach ($error as $error) {
@@ -50,7 +51,7 @@ if (isset($_POST['submit'])) {
           }
         }
         ?>
-        <!--error mesg-->
+        <!--error msg-->
         <label for="name">Username</label>
         <input type="text" name="Username" required minlength="5" maxlength="100" />
         <label for="e-mail">E-mail</label>

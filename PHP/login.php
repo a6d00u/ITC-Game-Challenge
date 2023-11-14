@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
 
   if (mysqli_num_rows($result) > 0) {
     $row = mysqli_fetch_array($result);
-    header('../index.html');
+    header('index.html');
 
   } else {
     $error[] = 'incorrect email or password';
